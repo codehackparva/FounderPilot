@@ -1,0 +1,4 @@
+import Link from 'next/link';
+const P=[['Starter','₹0','Free forever',['Support chat (basic)','10 AI drafts / month','Manual scheduler']],['Growth','₹499','per month',['Multilingual chat (EN/HI/GU)','Unlimited drafts','Insights and forecast','Inventory alerts']],['Scale','₹1,499','per month',['Everything in Growth','Team approvals','CRM connection','Priority human support']]];
+export default function Pricing(){return <><h2>Pricing</h2><p className="sub">Built to fix the "too many subscriptions" problem: one affordable tool with a free start. Prices are illustrative.</p>
+  <div className="grid">{P.map(([n,p,s,l],i)=><div key={n} className="card price-card" style={i===1?{borderColor:'var(--acc)'}:{}}>{i===1&&<span className="tag">Most popular</span>}<h3>{n}</h3><div className="price">{p} <span>{s}</span></div><ul>{l.map(x=><li key={x}>{x}</li>)}</ul><Link className={'btn '+(i===1?'':'g')} href="/chat">Try it</Link></div>)}</div></>}
